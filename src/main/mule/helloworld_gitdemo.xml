@@ -10,6 +10,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="helloworld_gitdemoFlow" doc:id="7e469c33-96ef-4f00-b3f9-eb1d371bd718" >
 		<http:listener doc:name="Listener" doc:id="12ab2560-a69e-440a-a996-b3330e5e1ddd" config-ref="HTTP_Listener_config" path="/greetings"/>
+		<logger level="INFO" doc:name="Start Logger" doc:id="ebd47f5f-3702-4c45-acdb-e4ec2e3baf9a" message="============= Flow Starts"/>
 		<ee:transform doc:name="Transform Message" doc:id="0d8572eb-0742-4f6d-a63e-a45a19ab9cdc" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
@@ -20,5 +21,6 @@ output application/json
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="End Logger" doc:id="3df80adc-468f-4d60-9d1b-eda8b38019d3" message="============= End of the Flow"/>
 	</flow>
 </mule>
