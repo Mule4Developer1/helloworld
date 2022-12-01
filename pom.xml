@@ -41,13 +41,16 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
-						<username>sai_mule4_kumar</username>
-						<password>Sai_mule4</password>
-						<applicationName>mulesoft-sample-ci-cd</applicationName>
-						<environment>Sandbox</environment>
-						<workerType>MICRO</workerType>
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
+						<applicationName>${appname}</applicationName>
+						<businessGroup>${business}</businessGroup>
+						<environment>${env}</environment>
+						<workerType>${vCore}</workerType>
+						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
+					<classifier>mule-application</classifier>
 				</configuration>
 			</plugin>
 
